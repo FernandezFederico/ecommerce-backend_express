@@ -2,7 +2,16 @@ import { ProductModel } from "../models/ProductModel.js";
 
 export const getAllProducts = async (req, res) => {
   try {
-    const products = await ProductModel.find();
+    let match = {};
+    if (req.query.keyword) {
+      match.$or = [
+        {productName: new RegExp (req.query.keyword, "i")},
+        {productCategory: new RegExp (req.query.keyword, "i")},
+        {productDescription: new RegExp (req.query.keyword, "i")},
+        {productPrice: parseInt(req.query.keyword)}
+      ]
+    }
+    const products = await ProductModel.aggregate([{ $match: match }]);
     res.status(200).json(products);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -51,4 +60,3 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
