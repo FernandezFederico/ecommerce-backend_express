@@ -1,14 +1,17 @@
 import { ProductModel } from "../models/ProductModel.js";
 
 export const getAllProducts = async (req, res) => {
+  const searchQuery = req.query.q;
+  const searchRegex = new RegExp(searchQuery.split('').join('.*'), "i");
+
   try {
     let match = {};
-    if (req.query.keyword) {
+    if (searchQuery) {
       match.$or = [
-        {productName: new RegExp (req.query.keyword, "i")},
-        {productCategory: new RegExp (req.query.keyword, "i")},
-        {productDescription: new RegExp (req.query.keyword, "i")},
-        {productPrice: parseInt(req.query.keyword)}
+        {productName: searchRegex},
+        {productCategory: searchRegex},
+        {productDescription: searchRegex},
+        {productPrice: searchQuery}
       ]
     }
     const products = await ProductModel.aggregate([{ $match: match }]);
