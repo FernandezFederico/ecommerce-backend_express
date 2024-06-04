@@ -1,20 +1,23 @@
 import { ProductModel } from "../models/ProductModel.js";
 
 export const getAllProducts = async (req, res) => {
-  const searchQuery = req.query.q;
-  const searchRegex = new RegExp(searchQuery.split('').join('.*'), "i");
-
   try {
-    let match = {};
-    if (searchQuery) {
-      match.$or = [
-        {productName: searchRegex},
-        {productCategory: searchRegex},
-        {productDescription: searchRegex},
-        {productPrice: searchQuery}
-      ]
+    let query = {};
+    if (req.query.q) {
+      const searchQuery = req.query.q;
+      const searchRegex = new RegExp(searchQuery.split("").join(".*"), "i");
+      const priceQuery = parseInt(searchQuery);
+
+      query.$or = [
+        { productName: searchRegex },
+        { productCategory: searchRegex },
+        { productDescription: searchRegex },
+      ];
+      if (!isNaN(priceQuery)) {
+        query.$or.push({ productPrice: priceQuery });
+      }
     }
-    const products = await ProductModel.aggregate([{ $match: match }]);
+    const products = await ProductModel.find(query);
     res.status(200).json(products);
   } catch (error) {
     res.status(500).json({ message: error.message });
