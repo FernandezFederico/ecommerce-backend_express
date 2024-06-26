@@ -5,6 +5,7 @@ import productRoutes from "./routes/productRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import rollRoutes from "./routes/rollRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
 import cors from "cors";
 
 const app = express();
@@ -16,6 +17,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/rolls", rollRoutes);
+app.use("/api/carts", cartRoutes);
 
 
 app.get("/", (req, res) => {

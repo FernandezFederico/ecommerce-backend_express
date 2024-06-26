@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
+  productImage: {
+    type: String,
+    required: [true, "Product image is required"],
+  },
   productName: {
     type: String,
     required: [true, "Product name is required"],
@@ -18,15 +22,10 @@ const productSchema = new mongoose.Schema({
     required: [true, "Product stock is required"],
     min: [0, "Product stock cannot be negative"],
   },
-  productImage: {
-    type: String,
-    required: [true, "Product image is required"],
-  },
   productDescription: {
     type: String,
     required: [true, "Product description is required"],
   },
-
 },
   {
     versionKey: false,
