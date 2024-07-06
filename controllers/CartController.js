@@ -49,11 +49,25 @@ export const getCartByUserId = async ( req , res ) => {
   try{
     const {userId} = req.params;
     const cartItems = await CartModel.find({ userId: userId })
-    if(cartItems.length === 0){
-      return res.status(404).json ({ message: `No cart items found for user ID: '${userId}'`})
-    }
     res.status(200).json(cartItems)
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
 }
+export const deleteCartWithProductId = async (req, res) => {
+  try {
+    const { userId, productId } = req.params;
+    const cart = await CartModel
+    .findOneAndDelete({ 'Product._id': productId, userId: userId });
+
+    if (!cart) {
+      return res.status(404)
+      .json({ message: `No cart item found for user ID: '${userId}' with product ID: '${productId}'` });
+    }
+
+    res.status(200).json("Cart product deleted successfully!");
+  } catch (error) {
+    res.status(500)
+    .json({ message: error.message });
+  }
+};
