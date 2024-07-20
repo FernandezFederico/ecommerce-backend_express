@@ -10,6 +10,16 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
+export const getUsersByRole = async (req, res) => {
+  try {
+    const { userRole } = req.params;
+    const users = await UserModel.find({ userRole });
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 export const getUser = async (req, res) => {
   try {
     const {id} = await req.params;
