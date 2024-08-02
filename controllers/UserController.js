@@ -42,6 +42,15 @@ export const createUser = async (req, res) => {
   }
 };
 
+export const addUser = async (req, res) => {
+  try {
+    const user = await UserModel.create(req.body);
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 export const updateUser = async (req, res) => {
   try {
     const {id} = req.params;
