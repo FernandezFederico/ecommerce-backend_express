@@ -8,6 +8,7 @@ import roleRoutes from "./routes/roleRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 import cors from "cors";
 
+
 const app = express();
 
 dotenv.config();
@@ -18,7 +19,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/roles", roleRoutes);
 app.use("/api/carts", cartRoutes);
-
+app.use('/uploads', express.static('uploads'));
 
 app.get("/", (req, res) => {
   res.send("¡Hola Mundo!");
