@@ -5,17 +5,17 @@ import { getAllProducts, getProduct, createProduct, updateProduct, deleteProduct
 
 const router = express.Router()
 
-const storage = multer.diskStorage({
+const productStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/');
+    cb(null, 'uploads/products_images');
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + path.extname(file.originalname));
   }
 })
 
-const upload = multer({ 
-  storage: storage,
+const uploadProductImage = multer({ 
+  storage: productStorage,
   limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: function (req, file, cb) {
     const filetypes = /jpeg|jpg|png|webp|gif/;
@@ -30,8 +30,8 @@ const upload = multer({
 
 router.get("/", getAllProducts);
 router.get("/:id", getProduct);
-router.post("/", upload.single('productImage'), createProduct);
-router.put("/:id", upload.single('productImage'), updateProduct);
+router.post("/", uploadProductImage.single('productImage'), createProduct);
+router.put("/:id", uploadProductImage.single('productImage'), updateProduct);
 router.delete("/:id", deleteProduct);
 
 export default router

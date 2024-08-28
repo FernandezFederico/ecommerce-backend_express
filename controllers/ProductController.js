@@ -45,7 +45,7 @@ export const createProduct = async (req, res) => {
   try {
     const productData = req.body;
     if (req.file) {
-      productData.productImage = `/uploads/${req.file.filename}`;
+      productData.productImage = `/uploads/products_images/${req.file.filename}`;
     }
     const product = await ProductModel.create(productData);
     res.status(201).json(product);
@@ -76,7 +76,7 @@ export const updateProduct = async (req, res) => {
         });
       }
 
-      updateData.productImage = `/uploads/${req.file.filename}`;
+      updateData.productImage = `/uploads/products_images/${req.file.filename}`;
     }
 
     const updatedProduct = await ProductModel.findByIdAndUpdate(id, updateData, { new: true });
@@ -97,8 +97,6 @@ export const deleteProduct = async (req, res) => {
     if (!product) {
       return res.status(404).json({ message: `Product ID: '${id}' Not found` });
     }
-
-    // Construir la ruta de la imagen asociada y eliminarla
     const imagePath = path.join(__dirname, '../', product.productImage);
     if (fs.existsSync(imagePath)) {
       fs.unlink(imagePath, (err) => {
