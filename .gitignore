@@ -1,0 +1,23 @@
+# Environment variables
+.env
+# Node modules
+node_modules/
+# IDE specific files
+.vscode/
+.idea/
+# OS generated files
+.DS_Store
+Thumbs.db
+# NPM shrinkwrap
+npm-shrinkwrap.json
+# Optional npm cache directory
+.npm/
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*.pid
+*.seed
+*.pid.lock
+# Binaries
+bin/
