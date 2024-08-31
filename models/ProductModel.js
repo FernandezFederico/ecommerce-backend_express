@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const productSchema = new mongoose.Schema({
   productImage: {
     type: String,
-    required: [true, "Product image is required"],
+    default: null,
   },
   productName: {
     type: String,
