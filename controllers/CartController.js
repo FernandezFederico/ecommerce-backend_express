@@ -49,7 +49,7 @@ export const createCart = async (req, res) => {
         userId,
         Product: {
           ...Product,
-          quantity: Product.quantity || 1 // Aseguramos que haya una cantidad
+          quantity: Product.quantity || 1
         }
       });
       await newCartItem.save();
