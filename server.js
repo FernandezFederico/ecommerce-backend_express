@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("¡Hola Mundo!");
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 
 const start = async () => {
