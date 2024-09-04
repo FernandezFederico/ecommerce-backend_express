@@ -14,11 +14,11 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors());
-app.use("/api/products", productRoutes);
-app.use("/api/categories", categoryRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/roles", roleRoutes);
-app.use("/api/carts", cartRoutes);
+app.use("/products", productRoutes);
+app.use("/categories", categoryRoutes);
+app.use("/users", userRoutes);
+app.use("/roles", roleRoutes);
+app.use("/carts", cartRoutes);
 app.use('/uploads', express.static('uploads'));
 
 app.get("/", (req, res) => {
