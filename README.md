@@ -23,5 +23,5 @@ Este proyecto es el backend de una aplicación completa de E-commerce, desarroll
 - Implementar bcrypt para el hash de contraseñas.
 
 ## Frontend
--El frontend de este proyecto está desarrollado con Angular y se puede encontrar [aquí](https://github.com/FernandezFederico/ecommerce-frontend_angular)
+- El frontend de este proyecto está desarrollado con Angular y se puede encontrar [aquí](https://github.com/FernandezFederico/ecommerce-frontend_angular)
 
