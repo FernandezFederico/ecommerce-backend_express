@@ -17,4 +17,4 @@ Este proyecto es el backend de una aplicación completa de E-commerce, desarroll
 - **Angular (Frontend)**: El frontend está desarrollado con Angular, lo que convierte este proyecto en un stack completo MEAN.
 
 ## Frontend
--El frontend de este proyecto está desarrollado con Angular y se puede encontrar [aquí]([https://github.com/tu-usuario/ecommerce-frontend](https://github.com/FernandezFederico/ecommerce-frontend_angular.git))
+-El frontend de este proyecto está desarrollado con Angular y se puede encontrar [Frontend en Angular]([https://github.com/tu-usuario/ecommerce-frontend](https://github.com/FernandezFederico/ecommerce-frontend_angular.git))
