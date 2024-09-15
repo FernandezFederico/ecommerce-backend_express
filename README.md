@@ -16,6 +16,12 @@ Este proyecto es el backend de una aplicación completa de E-commerce, desarroll
 - **Mongoose**: ODM de MongoDB para modelado de datos.
 - **Angular (Frontend)**: El frontend está desarrollado con Angular, lo que convierte este proyecto en un stack completo MEAN.
 
+  ## Mejoras futuras
+- Integrar un gateway de pago.
+- Agregar pruebas unitarias e integrales.
+- Implementar autenticación segura utilizando JSON Web Tokens.
+- Implementar bcrypt para el hash de contraseñas.
+
 ## Frontend
 -El frontend de este proyecto está desarrollado con Angular y se puede encontrar [aquí](https://github.com/FernandezFederico/ecommerce-frontend_angular)
 
