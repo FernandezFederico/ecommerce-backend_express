@@ -3,7 +3,7 @@ Este proyecto es el backend de una aplicación completa de E-commerce, desarroll
 
 ## Funcionalidades
 - **Autenticación de usuarios**: Registro, inicio de sesión y cierre de sesión con permisos basados en roles.
-- - **Operaciones CRUD**:
+- **Operaciones CRUD**:
  - **Productos**: Crear, leer, actualizar y eliminar productos.
  - **Usuarios**: Gestión de usuarios, roles y permisos.
  - **Carrito de compras**: Agregar, eliminar y actualizar cantidades de productos en el carrito.
