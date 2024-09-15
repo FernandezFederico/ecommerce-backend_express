@@ -1,4 +1,4 @@
-API Backend de E-commerce (Stack MEAN)
+# API Backend de E-commerce (Stack MEAN)
 Este proyecto es el backend de una aplicación completa de E-commerce, desarrollada utilizando el stack MEAN (MongoDB, Express, Angular y Node.js). Se encarga de la lógica del servidor para la gestión de productos, autenticación de usuarios y funcionalidad del carrito de compras.
 
 Funcionalidades
