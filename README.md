@@ -4,9 +4,9 @@ Este proyecto es el backend de una aplicación completa de E-commerce, desarroll
 ## Funcionalidades
 - **Autenticación de usuarios**: Registro, inicio de sesión y cierre de sesión con permisos basados en roles.
 - **Operaciones CRUD**:
--- **Productos**: Crear, leer, actualizar y eliminar productos.
--- **Usuarios**: Gestión de usuarios, roles y permisos.
--- **Carrito de compras**: Agregar, eliminar y actualizar cantidades de productos en el carrito.
+ - **Productos**: Crear, leer, actualizar y eliminar productos.
+ - **Usuarios**: Gestión de usuarios, roles y permisos.
+ - **Carrito de compras**: Agregar, eliminar y actualizar cantidades de productos en el carrito.
 - **Base de datos**: MongoDB para almacenar datos de productos, usuarios y carritos.
 ## Tecnologías
 - **Node.js**: Entorno de ejecución de JavaScript del lado del servidor.
